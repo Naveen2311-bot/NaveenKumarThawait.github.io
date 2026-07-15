@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naveen Kumar Thawait — PhD Research Scholar, GGV Bilaspur</title>
+<meta name="description" content="Naveen Kumar Thawait — PhD Research Scholar in Computer Science &amp; Engineering at Guru Ghasidas Vishwavidyalaya, Bilaspur. Research in Machine Learning, IoT Security, and Cybersecurity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1220;
+    --panel:#121B2E;
+    --panel-hover:#16213A;
+    --border:#22304E;
+    --paper:#ECEFF6;
+    --mist:#9BA3BC;
+    --teal:#4FC1B0;
+    --teal-dim:#2E5F58;
+    --amber:#E7A33E;
+    --edge:#2A3B5C;
+    --maxw:920px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif; margin:0; font-weight:600;}
+  p{margin:0;}
+  a{color:var(--teal); text-decoration:none;}
+  a:hover{color:var(--amber);}
+  :focus-visible{outline:2px solid var(--amber); outline-offset:3px; border-radius:2px;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--teal);
+    display:block;
+    margin-bottom:14px;
+  }
+  section{padding:96px 0;}
+  section + section{border-top:1px solid var(--border);}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,18,32,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+    gap:16px;
+  }
+  .logo{
+    font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem;
+    color:var(--paper); white-space:nowrap;
+  }
+  .logo span{color:var(--teal);}
+  .navlinks{display:flex; gap:24px; overflow-x:auto; font-size:.88rem;}
+  .navlinks a{color:var(--mist); white-space:nowrap;}
+  .navlinks a:hover{color:var(--amber);}
+
+  /* ---------- HERO ---------- */
+  .hero{padding-top:64px; padding-bottom:64px; border-top:none;}
+  .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center;}
+  .hero h1{font-size:clamp(2.3rem,5vw,3.4rem); line-height:1.05; margin-bottom:16px;}
+  .thesis{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:400;
+    font-size:1.2rem; color:var(--mist); max-width:46ch; margin-bottom:22px;
+  }
+  .affil{font-size:.86rem; color:var(--mist); margin-bottom:28px; line-height:1.6;}
+  .affil strong{color:var(--paper); font-weight:500;}
+  .stats{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:30px;}
+  .stat{
+    border:1px solid var(--border); background:var(--panel);
+    padding:8px 14px; border-radius:999px; font-size:.78rem;
+    display:flex; align-items:center; gap:6px; color:var(--mist);
+  }
+  .stat b{color:var(--paper); font-family:'JetBrains Mono',monospace; font-weight:600;}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    font-family:'JetBrains Mono',monospace; font-size:.82rem;
+    padding:12px 22px; border-radius:6px; border:1px solid var(--teal);
+    color:var(--teal); transition:.2s;
+  }
+  .btn:hover{background:var(--teal); color:var(--ink);}
+  .btn.ghost{border-color:var(--border); color:var(--mist);}
+  .btn.ghost:hover{border-color:var(--mist); background:transparent; color:var(--paper);}
+
+  /* ---------- NODE GRAPH ---------- */
+  .graph-wrap{position:relative;}
+  svg#graph{width:100%; height:auto; overflow:visible;}
+  .edge{stroke:var(--edge); stroke-width:1.4; fill:none;}
+  .node circle{fill:var(--panel); stroke:var(--teal); stroke-width:1.6;}
+  .node.primary circle{fill:var(--teal-dim); stroke:var(--teal); stroke-width:2;}
+  .node text{
+    font-family:'JetBrains Mono',monospace; font-size:10.5px; fill:var(--mist);
+  }
+  .node.primary text{fill:var(--paper); font-weight:600;}
+  .node{animation:drift 7s ease-in-out infinite;}
+  .node:nth-child(odd){animation-duration:8.5s;}
+  .node:nth-child(3n){animation-delay:-2s;}
+  .node:nth-child(4n){animation-delay:-4.5s;}
+  @keyframes drift{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
+  }
+  .edge{stroke-dasharray:400; stroke-dashoffset:400; animation:draw 1.8s ease forwards;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+
+  /* ---------- ABOUT ---------- */
+  .about h2{font-size:1.9rem; max-width:22ch; margin-bottom:22px;}
+  .about p{color:var(--mist); max-width:66ch; font-size:1.02rem;}
+
+  /* ---------- FOCUS GRID ---------- */
+  .focus h2{font-size:1.9rem; margin-bottom:36px;}
+  .focus-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--border); border:1px solid var(--border);}
+  .focus-card{background:var(--ink); padding:26px; transition:.2s;}
+  .focus-card:hover{background:var(--panel);}
+  .focus-card h3{font-family:'Inter',sans-serif; font-size:1rem; font-weight:600; color:var(--paper); margin-bottom:8px;}
+  .focus-card p{font-size:.88rem; color:var(--mist);}
+
+  /* ---------- PUBLICATIONS ---------- */
+  .pubs h2{font-size:1.9rem; margin-bottom:6px;}
+  .pubs > .wrap > p.lead{color:var(--mist); font-size:.92rem; margin-bottom:40px;}
+  .pub{
+    display:grid; grid-template-columns:90px 1fr; gap:20px;
+    padding:22px 0; border-top:1px solid var(--border);
+  }
+  .pub:last-child{border-bottom:1px solid var(--border);}
+  .pub-date{font-family:'JetBrains Mono',monospace; font-size:.78rem; color:var(--amber); padding-top:2px;}
+  .pub-title{font-size:1.02rem; font-weight:500; color:var(--paper); margin-bottom:6px; display:inline-block;}
+  .pub-title:hover{color:var(--teal);}
+  .pub-venue{font-style:italic; color:var(--mist); font-size:.86rem;}
+  .pub-gloss{color:var(--mist); font-size:.9rem; margin-top:8px; max-width:60ch;}
+  .pub-tag{
+    font-family:'JetBrains Mono',monospace; font-size:.68rem; color:var(--teal);
+    border:1px solid var(--teal-dim); padding:2px 8px; border-radius:4px; margin-left:10px;
+    vertical-align:middle;
+  }
+
+  /* ---------- EDUCATION ---------- */
+  .edu h2{font-size:1.9rem; margin-bottom:36px;}
+  .tl-item{display:grid; grid-template-columns:170px 1fr; gap:20px; padding:20px 0; border-top:1px solid var(--border);}
+  .tl-item:last-child{border-bottom:1px solid var(--border);}
+  .tl-date{font-family:'JetBrains Mono',monospace; font-size:.78rem; color:var(--mist);}
+  .tl-title{font-weight:600; color:var(--paper); margin-bottom:4px;}
+  .tl-sub{color:var(--mist); font-size:.88rem;}
+  .award{
+    margin-top:28px; padding:18px 20px; background:var(--panel); border:1px solid var(--border);
+    border-radius:8px; font-size:.88rem; color:var(--mist);
+  }
+  .award b{color:var(--amber); font-family:'JetBrains Mono',monospace; font-weight:600; font-size:.72rem; letter-spacing:.06em; display:block; margin-bottom:6px; text-transform:uppercase;}
+
+  /* ---------- CONNECT ---------- */
+  .connect h2{font-size:1.9rem; margin-bottom:14px;}
+  .connect > .wrap > p.lead{color:var(--mist); max-width:56ch; margin-bottom:36px;}
+  .contact-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border);}
+  .contact-card{background:var(--ink); padding:22px; font-size:.86rem;}
+  .contact-card .label{font-family:'JetBrains Mono',monospace; font-size:.68rem; text-transform:uppercase; letter-spacing:.08em; color:var(--teal); display:block; margin-bottom:8px;}
+  .contact-card .value{color:var(--paper);}
+  .contact-card .value.placeholder{color:var(--mist); font-style:italic;}
+
+  footer{padding:36px 0; text-align:center; color:var(--mist); font-size:.8rem;}
+
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media (max-width:760px){
+    .hero-grid{grid-template-columns:1fr;}
+    .focus-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .pub{grid-template-columns:1fr;}
+    .pub-date{padding-top:0;}
+    .tl-item{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">N<span>K</span>T</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#focus">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#education">Education</a>
+      <a href="#connect">Connect</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">PhD Research Scholar · Computer Science &amp; Engineering</span>
+      <h1>Naveen Kumar<br>Thawait</h1>
+      <p class="thesis">Researching how machine learning secures and scales the systems the Internet of Things runs on.</p>
+      <p class="affil"><strong>Guru Ghasidas Vishwavidyalaya</strong> (Central University)<br>Department of Computer Science &amp; Engineering — Bilaspur, Chhattisgarh, India</p>
+      <div class="stats">
+        <span class="stat"><b>9</b> Publications</span>
+        <span class="stat"><b>32</b> Citations · ResearchGate</span>
+        <span class="stat"><b>2024–present</b> Active Researcher</span>
+      </div>
+      <div class="cta-row">
+        <a href="#publications" class="btn">Read Publications</a>
+        <a href="#connect" class="btn ghost">Get in Touch</a>
+      </div>
+    </div>
+    <div class="graph-wrap">
+      <svg id="graph" viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
+        <!-- edges -->
+        <g>
+          <path class="edge" d="M170,190 L100,110" />
+          <path class="edge" d="M170,190 L290,90" />
+          <path class="edge" d="M170,190 L330,210" />
+          <path class="edge" d="M170,190 L120,280" />
+          <path class="edge" d="M290,90 L330,210" />
+          <path class="edge" d="M290,90 L100,110" />
+          <path class="edge" d="M330,210 L300,310" />
+          <path class="edge" d="M290,90 L370,150" />
+          <path class="edge" d="M330,210 L370,150" />
+        </g>
+        <!-- nodes -->
+        <g class="node primary" transform="translate(170,190)">
+          <circle r="34" />
+          <text text-anchor="middle" dy="4">ML</text>
+        </g>
+        <g class="node" transform="translate(100,110)">
+          <circle r="24" />
+          <text text-anchor="middle" dy="4">Deep Learning</text>
+        </g>
+        <g class="node" transform="translate(290,90)">
+          <circle r="26" />
+          <text text-anchor="middle" dy="4">IoT</text>
+        </g>
+        <g class="node" transform="translate(330,210)">
+          <circle r="26" />
+          <text text-anchor="middle" dy="4">Cybersecurity</text>
+        </g>
+        <g class="node" transform="translate(120,280)">
+          <circle r="22" />
+          <text text-anchor="middle" dy="4">Data Science</text>
+        </g>
+        <g class="node" transform="translate(300,310)">
+          <circle r="20" />
+          <text text-anchor="middle" dy="4">Cryptography</text>
+        </g>
+        <g class="node" transform="translate(370,150)">
+          <circle r="20" />
+          <text text-anchor="middle" dy="4">Cloud</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <div class="wrap reveal">
+    <span class="eyebrow">About</span>
+    <h2>Working at the seam between intelligent systems and the networks they run on.</h2>
+    <p>Naveen is a PhD Research Scholar in the Department of Computer Science &amp; Engineering at Guru Ghasidas Vishwavidyalaya, Bilaspur — a central university in Chhattisgarh, India. His work develops and evaluates machine learning frameworks and deep learning algorithms for predictive modelling and applied AI, with a research throughline that runs from IoT security and sustainable wireless networking to cybercrime detection and prevention. Earlier work spans generative modelling, applied diagnostics, and materials-science prediction — reflecting a consistent interest in where learning algorithms meet real-world constraints.</p>
+  </div>
+</section>
+
+<section id="focus" class="focus">
+  <div class="wrap reveal">
+    <span class="eyebrow">Research Focus</span>
+    <h2>Areas of active work</h2>
+    <div class="focus-grid">
+      <div class="focus-card">
+        <h3>Machine Learning</h3>
+        <p>Predictive models and algorithm design across domains — from materials science to medical diagnostics.</p>
+      </div>
+      <div class="focus-card">
+        <h3>Deep Learning</h3>
+        <p>Neural architectures for pattern recognition, generative modelling, and interactive AI systems.</p>
+      </div>
+      <div class="focus-card">
+        <h3>Internet of Things (IoT)</h3>
+        <p>Architectures, protocols, and vulnerability management for connected devices at scale.</p>
+      </div>
+      <div class="focus-card">
+        <h3>Cybersecurity</h3>
+        <p>Threat detection, adversarial robustness, and cybercrime prevention for ML and IoT systems.</p>
+      </div>
+      <div class="focus-card">
+        <h3>Computer Networking</h3>
+        <p>Sustainable and energy-efficient wireless networking strategies for distributed devices.</p>
+      </div>
+      <div class="focus-card">
+        <h3>Data Science</h3>
+        <p>Turning raw, messy data into interpretable, decision-ready insight.</p>
+      </div>
+      <div class="focus-card">
+        <h3>Cloud Computing</h3>
+        <p>Scalable infrastructure to support distributed, intelligent applications.</p>
+      </div>
+      <div class="focus-card">
+        <h3>Cryptography</h3>
+        <p>Securing data and communication channels in adversarial environments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications" class="pubs">
+  <div class="wrap reveal">
+    <span class="eyebrow">Publications</span>
+    <h2>9 peer-reviewed papers, chapters &amp; proceedings</h2>
+    <p class="lead">Full text and citation details are linked through ResearchGate and journal DOIs.</p>
+
+    <div class="pub">
+      <div class="pub-date mono">FEB 2026</div>
+      <div>
+        <a class="pub-title" href="https://www.researchgate.net/publication/401098287_Harnessing_IoT_Data_Machine_Learning_Approaches_to_Cybercrime_Detection_and_Prevention" target="_blank" rel="noopener">Harnessing IoT Data: Machine Learning Approaches to Cybercrime Detection and Prevention</a><br>
+        <span class="pub-venue">Open Access Journal of Applied Science and Technology</span> · <span class="pub-venue">with Sourabh Chaubey</span>
+        <p class="pub-gloss">Applies ML methods to detect and pre-empt cybercrime patterns emerging from IoT device data.</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-date mono">AUG 2025</div>
+      <div>
+        <a class="pub-title" href="https://www.researchgate.net/publication/394858375_Enhancing_Sustainable_Wireless_Networking_Strategies_for_IoT_Bal-ancing_Environmental_Impact_and_Resource_Efficiency" target="_blank" rel="noopener">Enhancing Sustainable Wireless Networking Strategies for IoT: Balancing Environmental Impact and Resource Efficiency</a><br>
+        <span class="pub-venue">International Journal of Media and Networks</span> · <span class="pub-venue">with Umakant Shrivastava</span>
+        <p class="pub-gloss">Examines energy-efficient wireless strategies for IoT networks under growing device density.</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-date mono">MAR 2025</div>
+      <div>
+        <a class="pub-title" href="https://www.researchgate.net/publication/389850821_Crafting_Images_With_Generative_Adversarial_Networks_GANs_and_Models" target="_blank" rel="noopener">Crafting Images With Generative Adversarial Networks (GANs) and Models</a>
+        <span class="pub-tag">Book Chapter</span><br>
+        <span class="pub-venue">Contributed chapter: "Challenges and Future Directions"</span>
+        <p class="pub-gloss">Surveys open problems and emerging directions in GAN-based generative image modelling.</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-date mono">JAN 2025</div>
+      <div>
+        <a class="pub-title" href="https://www.researchgate.net/publication/391955681_Enhancing_IoT_Systems_Cybercrime_Prevention_through_Security_Vulnerability_Management" target="_blank" rel="noopener">Enhancing IoT Systems: Cybercrime Prevention through Security Vulnerability Management</a><br>
+        <span class="pub-venue">International Journal of Media and Networks</span>
+        <p class="pub-gloss">Proposes vulnerability-management practices to reduce IoT exposure to cybercriminal exploitation.</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-date mono">JUN 2024</div>
+      <div>
+        <a class="pub-title" href="https://www.researchgate.net/publication/381613883_EXPLORING_INTERACTIVE_3D_HUMAN_MODELS_INTEGRATING_CONVENTIONAL_AI_TECHNIQUES_FOR_ENHANCED_USER_EXPERIENCE" target="_blank" rel="noopener">Exploring Interactive 3D Human Models: Integrating Conventional AI Techniques for Enhanced User Experience</a><br>
+        <span class="pub-venue">International Journal of Progressive Research in Engineering Management and Science</span>
+        <p class="pub-gloss">Investigates AI-driven 3D human models for more responsive gaming, VR, and AR interaction.</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-date mono">JUN 2024</div>
+      <div>
+        <a class="pub-title" href="https://www.researchgate.net/publication/381483430_Machine_Learning_Techniques_for_Predicting_Conductive_Properties_of_New_Materials" target="_blank" rel="noopener">Machine Learning Techniques for Predicting Conductive Properties of New Materials</a><br>
+        <span class="pub-venue">Int. J. Scientific Research in CSE &amp; IT</span> · <span class="pub-venue">with Umakant Shrivastava</span>
+        <p class="pub-gloss">Uses ML models to accelerate prediction of conductive properties in novel materials.</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-date mono">MAY 2024</div>
+      <div>
+        <a class="pub-title" href="https://www.researchgate.net/publication/380659626_Exploring_Machine_Learning_Algorithms_for_Enhanced_Diagnosis_of_Breast_Cancer_A_Comparative_Study" target="_blank" rel="noopener">Exploring Machine Learning Algorithms for Enhanced Diagnosis of Breast Cancer: A Comparative Study</a><br>
+        <span class="pub-venue">Int. J. Scientific Research in CSE &amp; IT</span>
+        <p class="pub-gloss">Compares ML classifiers for accuracy and reliability in breast cancer diagnosis.</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-date mono">MAY 2024</div>
+      <div>
+        <a class="pub-title" href="https://doi.org/10.32628/CSEIT24102125" target="_blank" rel="noopener">Machine Learning in Cybersecurity: Applications, Challenges and Future Directions</a><br>
+        <span class="pub-venue">Int. J. Scientific Research in CSE &amp; IT</span> · <span class="pub-venue">DOI: 10.32628/CSEIT24102125</span>
+        <p class="pub-gloss">Reviews ML's expanding role in threat detection, alongside adversarial risks it introduces.</p>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-date mono">APR 2024</div>
+      <div>
+        <a class="pub-title" href="https://www.researchgate.net/publication/391396526_ENHANCING_CYBERSECURITY_THROUGH_MACHINE_LEARNING_APPLICATIONS_A_COMPREHENSIVE_STUDY" target="_blank" rel="noopener">Enhancing Cybersecurity through Machine Learning Applications: A Comprehensive Study</a>
+        <span class="pub-tag">Conference Paper</span><br>
+        <span class="pub-venue">Peer-reviewed conference proceedings</span>
+        <p class="pub-gloss">A broad survey of ML techniques applied across the cybersecurity detection-and-response pipeline.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="education" class="edu">
+  <div class="wrap reveal">
+    <span class="eyebrow">Education</span>
+    <h2>Academic timeline</h2>
+
+    <div class="tl-item">
+      <div class="tl-date">Ongoing</div>
+      <div>
+        <div class="tl-title">Doctor of Philosophy (PhD) — Computer Science &amp; Engineering</div>
+        <div class="tl-sub">Guru Ghasidas Vishwavidyalaya, Bilaspur · Research Scholar</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Jan 2024 – Jun 2025</div>
+      <div>
+        <div class="tl-title">Master of Science, Computer Science / IT</div>
+        <div class="tl-sub">Dr. C. V. Raman University, Bilaspur</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Jan 2021 – Nov 2023</div>
+      <div>
+        <div class="tl-title">Computer Science coursework</div>
+        <div class="tl-sub">Dr. C. V. Raman University, Bilaspur</div>
+      </div>
+    </div>
+
+    <div class="award">
+      <b>Award · October 2024</b>
+      "Integrating Traditional Knowledge with Modern Science: A Pathway to Sustainable Innovation"
+    </div>
+  </div>
+</section>
+
+<section id="connect" class="connect">
+  <div class="wrap reveal">
+    <span class="eyebrow">Connect</span>
+    <h2>Let's talk research</h2>
+    <p class="lead">Open to collaboration, peer review, and conversations on ML, IoT security, and applied AI.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="label">Email</span>
+        <span class="value placeholder">add-your-email@ggv.ac.in</span>
+      </div>
+      <div class="contact-card">
+        <span class="label">Phone</span>
+        <span class="value placeholder">add your phone number</span>
+      </div>
+      <div class="contact-card">
+        <span class="label">ResearchGate</span>
+        <a class="value" href="https://www.researchgate.net/profile/Naveen-Thawait" target="_blank" rel="noopener">researchgate.net/Naveen-Thawait</a>
+      </div>
+      <div class="contact-card">
+        <span class="label">Google Scholar</span>
+        <a class="value" href="https://scholar.google.com/citations?user=cW5Er_gAAAAJ&hl=en" target="_blank" rel="noopener">View profile ↗</a>
+      </div>
+      <div class="contact-card">
+        <span class="label">LinkedIn</span>
+        <span class="value placeholder">add your LinkedIn URL</span>
+      </div>
+      <div class="contact-card">
+        <span class="label">GitHub / ORCID</span>
+        <span class="value placeholder">add your ID</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Naveen Kumar Thawait · Department of Computer Science &amp; Engineering, Guru Ghasidas Vishwavidyalaya, Bilaspur</div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
